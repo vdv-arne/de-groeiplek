@@ -1,0 +1,11 @@
+_docx_extract/
+_imgs/
+_g/
+_e/
+_x/
+.DS_Store
+
+# Source drafts & internal notes — kept out of the public site repo
+*.docx
+/docs/
+.claude/

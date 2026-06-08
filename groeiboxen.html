@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groeiboxen — De Groeiplek | Nele Meuleman</title>
+    <meta name="description" content="Groeiboxen van De Groeiplek: kant-en-klare boxen met eenvoudige activiteiten die uitnodigen tot samenzijn. Bestel je groeibox.">
+    <link rel="icon" type="image/svg+xml" href="DeGroeiplek.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html#welkom" class="nav-brand">
+        <img src="DeGroeiplek.svg" alt="De Groeiplek logo">
+        <span>De Groeiplek</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false" onclick="toggleNav(this)">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+        <li><a href="index.html#welkom">Welkom</a></li>
+        <li><a href="index.html#over-mij">Over mij</a></li>
+        <li><a href="index.html#aanbod">Aanbod</a></li>
+        <li><a href="groeiboxen.html">Groeiboxen</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Intro -->
+<section class="hero shop-intro" id="welkom">
+    <div class="hero-inner">
+        <h1>Groeiboxen</h1>
+        <p>Een groeibox is geen doos vol 'moetjes'. Het is een moment. Een pauze. Een kleine bubbel van samenzijn. In elke box zit een zorgvuldig samengestelde activiteit die jullie uitnodigt om samen te beleven — zonder voorbereiding, zonder gedoe. Gewoon jij en je kind(eren) in verbinding: spelen, praten, voelen, lachen… op jullie tempo.</p>
+        <p class="tagline">Openen = verbinden.</p>
+    </div>
+</section>
+
+<!-- Webshop -->
+<section class="shop" id="boxen">
+    <h2 class="section-title">Onze groeiboxen</h2>
+    <p class="section-subtitle">Klik op een box voor meer info en om te bestellen.</p>
+    <div class="shop-table-wrap">
+        <table class="shop-table">
+            <thead>
+                <tr>
+                    <th></th><th>Naam</th><th>Beschrijving</th><th>Leeftijd</th><th>Prijs</th><th></th>
+                </tr>
+            </thead>
+            <tbody id="shop-body"></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Modal root (populated by JS) -->
+<div class="modal-backdrop" id="modal-root" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+
+<footer class="footer">
+    <p>&copy; 2026 De Groeiplek &mdash; Nele Meuleman &bull; <a href="mailto:nele.meuleman@degroeiplek.be">nele.meuleman@degroeiplek.be</a></p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════
+     GROEIBOXEN — bewerk hier de boxen.
+     Voeg een box toe door een object aan de lijst toe te voegen.
+     Verwijder de regel `voorbeeld: true` zodra een box echt is.
+     ════════════════════════════════════════════════════════════ -->
+<script id="box-data">
+window.GROEIBOXEN = [
+    {
+        id: 'bubble',
+        naam: 'Bubble-box',
+        kleur: 'linear-gradient(135deg,#89a1ca,#ff98c9)',
+        korteBeschrijving: 'Samen grote zeepbellen maken en een bellenblaas knutselen.',
+        leeftijd: 'Samen',
+        prijs: '€25',
+        watZitErin: [
+            'Alle materialen om samen grote zeepbellen te maken',
+            'Materiaal om samen een bellenblaas te knutselen',
+            'Een eenvoudige uitleg — geen voorbereiding nodig'
+        ],
+        volledigeBeschrijving: 'De Bubble-box nodigt jullie uit om samen naar buiten te gaan en grote zeepbellen te maken. Geen voorbereiding nodig: alleen tijd, aandacht en samen plezier maken. Een kleine bubbel van samenzijn.'
+    },
+    {
+        id: 'gevoelens',
+        naam: 'Gevoelens-box',
+        voorbeeld: true,
+        kleur: 'linear-gradient(135deg,#ff864f,#ffdd10)',
+        korteBeschrijving: 'Emoties spelenderwijs benoemen en voelen.',
+        leeftijd: '4–12 jaar',
+        prijs: '€25',
+        watZitErin: [
+            'Gevoelenskaarten',
+            'Een knutselactiviteit rond emoties',
+            'Gesprekskaartjes voor samen'
+        ],
+        volledigeBeschrijving: '(Voorbeeldbox) De Gevoelens-box helpt om emoties spelenderwijs te benoemen en te voelen. Samen ontdekken, praten en knutselen rond wat er leeft.'
+    },
+    {
+        id: 'rust',
+        naam: 'Rustmoment-box',
+        voorbeeld: true,
+        kleur: 'linear-gradient(135deg,#ff98c9,#ffd6ea)',
+        korteBeschrijving: 'Samen ontspannen met een zachte activiteit en ademhaling.',
+        leeftijd: '4–12 jaar',
+        prijs: '€25',
+        watZitErin: [
+            'Een zachte ontspanningsactiviteit',
+            'Eenvoudige ademhalingsoefeningen',
+            'Materiaal om samen tot rust te komen'
+        ],
+        volledigeBeschrijving: '(Voorbeeldbox) De Rustmoment-box brengt rust en nabijheid in het gezinsleven: samen vertragen, ademen en even gewoon zijn.'
+    },
+    {
+        id: 'natuur',
+        naam: 'Natuur-box',
+        voorbeeld: true,
+        kleur: 'linear-gradient(135deg,#89a1ca,#ffdd10)',
+        korteBeschrijving: 'Samen naar buiten: ontdekken en beleven in de natuur.',
+        leeftijd: 'Samen',
+        prijs: '€25',
+        watZitErin: [
+            'Een ontdekkingsopdracht voor buiten',
+            'Materiaal om de natuur te verkennen',
+            'Ideeën om samen te beleven'
+        ],
+        volledigeBeschrijving: '(Voorbeeldbox) De Natuur-box nodigt uit om samen naar buiten te trekken en de natuur te ontdekken — verbinding in de kleine dingen.'
+    }
+];
+</script>
+<script src="script.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
