@@ -33,7 +33,7 @@ body {
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--coral-dark); }
-.nav-brand img { height: 48px; width: auto; }
+.nav-brand img { height: 96px; width: auto; }
 .nav-brand span { font-family: 'Lora', serif; font-weight: 600; font-size: 1.25rem; }
 .nav-links { display: flex; list-style: none; gap: 1.75rem; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; transition: color 0.3s; position: relative; }
@@ -68,7 +68,7 @@ section { padding: 4.5rem 2rem; }
 /* ── Over mij ── */
 .over-mij { background: var(--white); }
 .over-mij-content { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-.over-mij-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: contain; background: var(--cream); border: 4px solid var(--pink-soft); box-shadow: 0 4px 20px rgba(233, 106, 50, 0.15); margin-bottom: 2rem; padding: 0.5rem; }
+.over-mij-photo { width: 100%; max-width: 480px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; border: 5px solid var(--white); box-shadow: 0 8px 28px rgba(233, 106, 50, 0.18); margin-bottom: 2rem; }
 .over-mij-name { font-family: 'Lora', serif; font-size: 1.5rem; color: var(--coral-dark); margin-bottom: 1.5rem; font-weight: 600; }
 .over-mij-text p { color: var(--text-light); font-size: 1rem; margin-bottom: 1.25rem; line-height: 1.85; text-align: left; }
 .over-mij-text p:last-child { font-weight: 600; color: var(--text); }
@@ -90,7 +90,23 @@ section { padding: 4.5rem 2rem; }
 .prijzen-table caption { display: none; }
 .prijzen-table th.group { text-align: left; font-family: 'Lora', serif; color: var(--coral-dark); font-size: 1.1rem; padding: 1.25rem 0.5rem 0.5rem; border-bottom: 2px solid var(--pink-soft); }
 .prijzen-table td { padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--beige); color: var(--text-light); }
-.prijzen-table td.prijs { text-align: right; font-weight: 600; color: var(--text); white-space: nowrap; }
+.prijzen-table td.prijs { text-align: right; font-weight: 600; color: var(--text); white-space: nowrap; vertical-align: top; }
+.prijs-naam { display: block; color: var(--text); font-weight: 600; }
+.prijs-desc { display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.15rem; }
+.prijzen-note { max-width: 640px; margin: 2rem auto 0; font-size: 0.9rem; color: var(--text-light); text-align: center; line-height: 1.75; }
+
+/* ── Werking ── */
+.werking { background: var(--cream); }
+.werking-content { max-width: 760px; margin: 0 auto; }
+.werking-intro { margin-bottom: 2.5rem; text-align: center; }
+.werking-intro p { color: var(--text-light); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+.werking-step { background: var(--white); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(233, 106, 50, 0.08); border-left: 5px solid var(--coral); }
+.werking-step:nth-child(3) { border-left-color: var(--pink); }
+.werking-step:nth-child(4) { border-left-color: var(--yellow); }
+.werking-step h3 { font-family: 'Lora', serif; color: var(--coral-dark); font-size: 1.3rem; margin-bottom: 0.75rem; }
+.werking-step p { color: var(--text-light); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+.werking-step ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-light); }
+.werking-step ul li { margin-bottom: 0.4rem; line-height: 1.7; }
 
 /* ── Webshop intro ── */
 .shop-intro { background: linear-gradient(135deg, var(--pink-soft) 0%, var(--cream) 60%); }
@@ -168,6 +184,7 @@ section { padding: 4.5rem 2rem; }
 }
 @media (max-width: 480px) {
     .navbar { padding: 0.5rem 1rem; }
+    .nav-brand img { height: 68px; }
     .nav-brand span { font-size: 1.05rem; }
     .hero h1 { font-size: 1.7rem; }
     .section-title { font-size: 1.6rem; }
